@@ -7,7 +7,7 @@ end)
 
 local HttpService: HttpService = cloneref(game:GetService("HttpService"))
 
---// Fix is_____ functions for shitsploits, those functions should never error, only return a boolean. (why is this still a problem in the big 2026)
+--// Fix is_____ functions for shitsploits
 local isfolder, isfile, listfiles = isfolder, isfile, listfiles
 local isfolder_copy, isfile_copy, listfiles_copy = clonefunction(isfolder), clonefunction(isfile), clonefunction(listfiles)
 local isfolder_success, isfolder_error = pcall(function() return isfolder_copy("test" .. tostring(math.random(1000000, 9999999))) end)
@@ -612,9 +612,12 @@ function ThemeManager:CreateThemeManager(Themesbox: any)
         return ThemeManager.BuiltInThemes[IndexA][1] < ThemeManager.BuiltInThemes[IndexB][1]
     end)
 
+    --// Создание inline-строки (Label + ColorPicker справа)
     local function CreateColorOption(Text, SchemeIndex)
-        Themesbox:AddLabel(Text):AddColorPicker(SchemeIndex, {
-            Default = ThemeManager.Library.Scheme[SchemeIndex]
+        local Label = Themesbox:AddLabel(Text)
+        Label:AddColorPicker(SchemeIndex, {
+            Default = ThemeManager.Library.Scheme[SchemeIndex],
+            Title = Text
         })
 
         return ThemeManager.Library.Options[SchemeIndex]
@@ -628,7 +631,7 @@ function ThemeManager:CreateThemeManager(Themesbox: any)
     
     Themesbox:AddDropdown("FontFace", {
         Text = "Font Face",
-        Default = "SourceSans",
+        Default = "RobotoMono",
         
         Values = { "BuilderSans", "Code", "Fantasy", "Gotham", "Jura", "Roboto", "RobotoMono", "SourceSans" },
         AllowNull = false,
