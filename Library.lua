@@ -30,12 +30,6 @@ local Tooltips = {}
 
 local BaseURL = "https://raw.githubusercontent.com/deividcomsono/Obsidian/refs/heads/main/"
 local CustomImageManager = {}
---[=[
-    [!] РЕШЕНИЕ:
-    Вставь блок кода "Glow" в секцию `do ... end`, где инициализируются `CustomImageManagerAssets`.
-    Ниже представлен исправленный фрагмент, который нужно заменить в твоем скрипте.
-]=]
-
 local CustomImageManagerAssets = {
     TransparencyTexture = {
         RobloxId = 139785960036434,
@@ -65,15 +59,6 @@ local CustomImageManagerAssets = {
         RobloxId = 97682394690683,
         Path = "Obsidian/assets/CheckIcon.png",
         URL = BaseURL .. "assets/CheckIcon.png",
-
-        Id = nil,
-    },
-
-    -->>> ВОТ СЮДА ВСТАВЛЯТЬ GLOW (ИЛИ ЛЮБЫЕ ДРУГИЕ АССЕТЫ): <<<--
-    Glow = {
-        RobloxId = 0, -- Укажи ID ассета Roblox (число), если есть
-        Path = "Obsidian/assets/SaturationMap.png",
-        URL = BaseURL .. "assets/SaturationMap.png",
 
         Id = nil,
     },
