@@ -42,7 +42,7 @@ local ThemeManager = {
     BuiltInThemes = {
         ["Default"] = {
             1,
-            { FontColor = "ffffff", MainColor = "191919", AccentColor = "7d55ff", BackgroundColor = "0f0f0f", OutlineColor = "282828", BackgroundImage = "" },
+            { FontColor = "ffffff", MainColor = "171717", AccentColor = "ffffff", BackgroundColor = "0f0f0f", OutlineColor = "282828", BackgroundImage = "103194353669460" },
         },
         ["BBot"] = {
             2,
@@ -628,7 +628,7 @@ function ThemeManager:CreateThemeManager(Themesbox: any)
     
     Themesbox:AddDropdown("FontFace", {
         Text = "Font Face",
-        Default = "Code",
+        Default = "SourceSans",
         
         Values = { "BuilderSans", "Code", "Fantasy", "Gotham", "Jura", "Roboto", "RobotoMono", "SourceSans" },
         AllowNull = false,
